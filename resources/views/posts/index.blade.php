@@ -11,15 +11,15 @@
 
       
     </head>
-    <body class="antialiased">
-        <h1>BLOG</h1>
-        <div>
-            <h2>タイトル1</h2>
-            <div>内容1</div>
-        </div>
-        <div>
-            <h2>タイトル2</h2>
-            <div>内容2</div>
+    <body>
+        <h1>Blog Name</h1>
+        <div class='posts'>
+            @foreach ($posts as $post)
+                <div class='post'>
+                    <h2 class='title'>{{ $post->title }}</h2>
+                    <p class='body'>{{ $post->body }}</p>
+                </div>
+            @endforeach
         </div>
     </body>
 </html>
