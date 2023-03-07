@@ -14,20 +14,19 @@
     <body>
         <h1>Blog Name</h1>
         <div class='posts'>
-            @foreach ($posts as $post)
                 <div class='post'>
-                    <h2 class='title'>
-                        <a href = './posts/{{$post->id}}'>{{$post->title}}</a>
-                    </h2>
-                    <p class='body'>{{ $post->body }}</p>
+                    <form action="posts/" method="POST">
+                        @csrf
+                        <input type="text"  name="post[title]"/>
+                        <br/>
+                        <textarea  name="post[name]"></textarea>
+                        <br/>
+                        <input type="submit" value="保存"/>
+                    </form>
                 </div>
-            @endforeach
-        </div>
-        <div>
-            {{$posts->links()}};
-        </div>
-         <div>
-            <a href = "/posts/create">新規作成</a>
+                <div>
+                    <a href="/">戻る</a>
+                </div>
         </div>
     </body>
 </html>
