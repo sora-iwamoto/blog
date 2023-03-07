@@ -17,9 +17,11 @@
                 <div class='post'>
                     <form action="/posts" method="POST">
                         @csrf
-                        <input type="text"  name="post[title]"/>
+                        <input type="text"  name="post[title]" value="{{ old('post.title') }}"/>
+                        <p>{{$errors->first('post.title') }}</p>
                         <br/>
-                        <textarea  name="post[body]"></textarea>
+                        <textarea  name="post[body]" >{{ old('post.title') }}</textarea>
+                        <p>{{$errors->first('post.body') }}</p>
                         <br/>
                         <input type="submit" value="保存"/>
                     </form>
