@@ -15,11 +15,11 @@
         <h1>Blog Name</h1>
         <div class='posts'>
                 <div class='post'>
-                    <form action="posts/" method="POST">
+                    <form action="/posts" method="POST">
                         @csrf
                         <input type="text"  name="post[title]"/>
                         <br/>
-                        <textarea  name="post[name]"></textarea>
+                        <textarea  name="post[body]"></textarea>
                         <br/>
                         <input type="submit" value="保存"/>
                     </form>
