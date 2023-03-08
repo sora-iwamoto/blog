@@ -8,16 +8,16 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-      
     </head>
+    
     <body>
         <h1>Blog Name</h1>
-        <div class='posts'>
-                <div class='post'>
-                    <h2 class='title'>{{ $posts->title }}</h2>
-                    <p class='body'>{{ $posts->body }}</p>
-                </div>
+        <div class='post'>
+            <h2 class='title'>{{ $post->title }}</h2>
+            <p class='body'>{{ $post->body }}</p>
+        </div>
+        <div class="edit">
+            <a href="/posts/{{ $post->id }}/edit">edit</a>
         </div>
         <a href="/">戻る</a>
     </body>
