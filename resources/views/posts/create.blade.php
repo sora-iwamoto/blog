@@ -23,8 +23,17 @@
                         <textarea  name="post[body]" >{{ old('post.title') }}</textarea>
                         <p>{{$errors->first('post.body') }}</p>
                         <br/>
+                        <div>
+                        <p>カテゴリー</p>
+                        <select name="post[category_id]">
+                            @foreach($categories as $category)
+                                <option value="{{$category ->id}}">{{$category->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                         <input type="submit" value="保存"/>
                     </form>
+                    
                 </div>
                 <div>
                     <a href="/">戻る</a>
